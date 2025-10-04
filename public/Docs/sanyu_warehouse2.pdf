@@ -1,0 +1,98 @@
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R]
+/Count 1
+>>
+endobj
+
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Contents 4 0 R
+/Resources <<
+/Font <<
+/F1 5 0 R
+/F2 6 0 R
+>>
+>>
+>>
+endobj
+
+4 0 obj
+<<
+/Length 500
+>>
+stream
+BT
+/F1 16 Tf
+100 750 Td
+(Inventory Certificate) Tj
+0 -30 Td
+/F2 12 Tf
+(Certificate No: CERT-2025-005) Tj
+0 -25 Td
+(Issue Date: 2025-10-05) Tj
+0 -25 Td
+(Warehouse: Sanyu Warehouse) Tj
+0 -25 Td
+(Department: Non-Ferrous Division) Tj
+0 -25 Td
+(Item: Copper Pipe B) Tj
+0 -25 Td
+(Quantity: 1100kg) Tj
+0 -25 Td
+(Remarks: Surface inspected) Tj
+0 -25 Td
+(Storage Location: Warehouse B-1F-07) Tj
+0 -25 Td
+(Quality: Passed) Tj
+0 -25 Td
+(Remarks: Dimensions compliant, surface treated) Tj
+ET
+endstream
+endobj
+
+5 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica-Bold
+>>
+endobj
+
+6 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+endobj
+
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000274 00000 n 
+0000000825 00000 n 
+0000000926 00000 n 
+trailer
+<<
+/Size 7
+/Root 1 0 R
+>>
+startxref
+1077
+%%EOF
