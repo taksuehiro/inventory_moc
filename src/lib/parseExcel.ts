@@ -61,19 +61,23 @@ export function createSampleExcelFile(): void {
 }
 
 export function downloadSamplePDFs(): void {
+  // 簡単なPDFファイルを動的に生成してダウンロード
   const pdfFiles = [
-    'toyota_logistics.pdf',
-    'sanyu_warehouse.pdf', 
-    'nakagumi.pdf',
-    'toyota_logistics2.pdf',
-    'sanyu_warehouse2.pdf'
+    { name: 'toyota_logistics.pdf', content: 'Toyota Logistics Certificate\nCopper Pipe A: 1200kg\nDelivery Date: 2025-09-20' },
+    { name: 'sanyu_warehouse.pdf', content: 'Sanyu Warehouse Certificate\nAluminum Plate C: 800kg\nLot No: ALM-003' },
+    { name: 'nakagumi.pdf', content: 'Nakagumi Certificate\nBrass Rod B: 950kg\nStorage Period: 2026-01-31' },
+    { name: 'toyota_logistics2.pdf', content: 'Toyota Logistics Certificate\nCopper Scrap: 500kg\nCategory: Recycled Material' },
+    { name: 'sanyu_warehouse2.pdf', content: 'Sanyu Warehouse Certificate\nCopper Pipe B: 1100kg\nRemarks: Surface inspected' }
   ];
   
   // 各PDFファイルをダウンロード
-  pdfFiles.forEach((filename, index) => {
+  pdfFiles.forEach((file, index) => {
+    const blob = new Blob([file.content], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    
     const link = document.createElement('a');
-    link.href = `/${filename}`;
-    link.download = filename;
+    link.href = url;
+    link.download = file.name;
     link.style.display = 'none';
     document.body.appendChild(link);
     
@@ -81,6 +85,7 @@ export function downloadSamplePDFs(): void {
     setTimeout(() => {
       link.click();
       document.body.removeChild(link);
+      URL.revokeObjectURL(url);
     }, index * 500);
   });
 }
