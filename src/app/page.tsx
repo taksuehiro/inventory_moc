@@ -25,8 +25,7 @@ export default function Home() {
                 <h3 className="text-xl font-semibold text-gray-900">ファイルアップロード</h3>
               </div>
               <p className="text-gray-600 mb-4">
-                ExcelファイルとPDFファイルをドラッグ&ドロップで簡単にアップロードできます。
-                サンプルファイルも提供しています。
+                ExcelファイルとPDFファイルをドラッグ&ドロップで簡単にアップロードできます。              
               </p>
               <ul className="text-sm text-gray-500 space-y-1">
                 <li>• 対応形式: .xlsx, .xls, .pdf</li>
@@ -59,7 +58,7 @@ export default function Home() {
               </Button>
             </Link>
             <p className="text-sm text-gray-500 mt-4">
-              ※ このMOCではAI機能は不使用、アップロードも使用せずとも利用可能です。
+              ※ このMOCではAI機能は不使用、アップロード機能は使用しなくても利用可能です。
             </p>
           </div>
         </div>
