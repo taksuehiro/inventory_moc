@@ -59,7 +59,7 @@ export default function Home() {
               </Button>
             </Link>
             <p className="text-sm text-gray-500 mt-4">
-              ※ このMOCでは実際のVLM機能は使用せず、手動チェックで体験できます
+              ※ このMOCではAI機能は不使用、アップロードも使用せずとも利用可能です。
             </p>
           </div>
         </div>
