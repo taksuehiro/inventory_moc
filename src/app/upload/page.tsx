@@ -37,15 +37,16 @@ export default function UploadPage() {
   };
 
   const handleNext = () => {
+    // ファイルがアップロードされている場合は保存
     if (excelFile) {
-      // ファイルをローカルストレージに保存（MOC用）
       localStorage.setItem('excelFile', JSON.stringify({
         name: excelFile.name,
         size: excelFile.size,
         type: excelFile.type
       }));
-      
-      // PDFファイル情報も保存
+    }
+    
+    if (pdfFiles.length > 0) {
       localStorage.setItem('pdfFiles', JSON.stringify(
         pdfFiles.map(file => ({
           name: file.name,
@@ -53,9 +54,10 @@ export default function UploadPage() {
           type: file.type
         }))
       ));
-      
-      router.push('/review');
     }
+    
+    // ファイルがなくても次へ進める
+    router.push('/review');
   };
 
   return (
@@ -147,7 +149,6 @@ export default function UploadPage() {
             <div className="flex justify-center pt-6">
               <Button
                 onClick={handleNext}
-                disabled={!excelFile}
                 size="lg"
                 className="px-8 py-3 text-lg"
               >

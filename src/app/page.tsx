@@ -56,7 +56,7 @@ export default function Home() {
           <div className="text-center">
             <Link href="/upload">
               <Button size="lg" className="px-8 py-4 text-lg">
-                照合を開始する
+                スタート
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
