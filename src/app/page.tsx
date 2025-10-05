@@ -31,7 +31,6 @@ export default function Home() {
               <ul className="text-sm text-gray-500 space-y-1">
                 <li>• 対応形式: .xlsx, .xls, .pdf</li>
                 <li>• ドラッグ&ドロップ対応</li>
-                <li>• サンプルファイル提供</li>
               </ul>
             </div>
 
@@ -47,7 +46,6 @@ export default function Home() {
               <ul className="text-sm text-gray-500 space-y-1">
                 <li>• PDFビューアー内蔵</li>
                 <li>• 項目別チェック機能</li>
-                <li>• リアルタイム統計表示</li>
               </ul>
             </div>
           </div>

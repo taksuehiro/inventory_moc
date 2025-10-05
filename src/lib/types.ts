@@ -15,3 +15,4 @@ export interface CheckedFields {
 export interface VerificationStatus {
   [rowId: number]: 'pending' | 'accepted' | 'rejected';
 }
+
