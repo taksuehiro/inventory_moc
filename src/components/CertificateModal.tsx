@@ -132,12 +132,12 @@ export function CertificateModal({
           </div>
           
           {/* 照合項目エリア */}
-          <div className="w-80 border rounded-lg p-4 bg-white">
+          <div className="w-80 border rounded-lg p-4 bg-white flex flex-col">
             <h3 className="text-lg font-semibold mb-4 text-gray-800">
               照合項目
             </h3>
             
-            <div className="space-y-4">
+            <div className="flex-1 overflow-y-auto space-y-4">
               {fields.map((field) => (
                 <div
                   key={field.key}

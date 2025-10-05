@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { FileDropZone } from '@/components/FileDropZone';
-import { createSampleExcelFile } from '@/lib/parseExcel';
-import { Download, ArrowRight } from 'lucide-react';
+import { createSampleExcelFile, downloadSamplePDFs } from '@/lib/parseExcel';
+import { Download, ArrowRight, FileText } from 'lucide-react';
 
 export default function UploadPage() {
   const router = useRouter();
@@ -30,6 +30,10 @@ export default function UploadPage() {
 
   const handleDownloadSample = () => {
     createSampleExcelFile();
+  };
+
+  const handleDownloadPDFSamples = () => {
+    downloadSamplePDFs();
   };
 
   const handleNext = () => {
@@ -103,6 +107,21 @@ export default function UploadPage() {
                 selectedFile={null}
                 onRemoveFile={() => {}}
               />
+              
+              <div className="mt-4 flex items-center justify-between">
+                <p className="text-sm text-gray-500">
+                  サンプルPDFファイル（5種類）をダウンロードできます
+                </p>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={handleDownloadPDFSamples}
+                  className="flex items-center space-x-2"
+                >
+                  <FileText className="h-4 w-4" />
+                  <span>PDFサンプルをダウンロード</span>
+                </Button>
+              </div>
               
               {pdfFiles.length > 0 && (
                 <div className="mt-4 space-y-2">

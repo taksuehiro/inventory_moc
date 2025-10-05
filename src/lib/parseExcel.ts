@@ -45,17 +45,42 @@ export function parseExcelFile(file: File): Promise<InventoryData[]> {
 
 export function createSampleExcelFile(): void {
   const sampleData = [
-    ['営業部名', '在庫場所', '在庫名称', '数量', '証明書ファイル', '補足情報'],
-    ['非鉄事業部', 'トヨタ物流', '銅パイプA', '1200kg', 'toyota_logistics.pdf', '納入日: 2025-09-20'],
-    ['非鉄事業部', '三友倉庫', 'アルミ板C', '800kg', 'sanyu_warehouse.pdf', 'ロットNo: ALM-003'],
-    ['非鉄事業部', '中組', '真鍮棒B', '950kg', 'nakagumi.pdf', '保管期限: 2026-01-31'],
-    ['非鉄事業部', 'トヨタ物流', '銅スクラップ', '500kg', 'toyota_logistics2.pdf', '分類: リサイクル品'],
-    ['非鉄事業部', '三友倉庫', '銅パイプB', '1100kg', 'sanyu_warehouse2.pdf', '備考: 表面検査済']
+    ['Department', 'Warehouse', 'Item Name', 'Quantity', 'Certificate File', 'Remarks'],
+    ['Non-Ferrous Division', 'Toyota Logistics', 'Copper Pipe A', '1200kg', 'toyota_logistics.pdf', 'Delivery Date: 2025-09-20'],
+    ['Non-Ferrous Division', 'Sanyu Warehouse', 'Aluminum Plate C', '800kg', 'sanyu_warehouse.pdf', 'Lot No: ALM-003'],
+    ['Non-Ferrous Division', 'Nakagumi', 'Brass Rod B', '950kg', 'nakagumi.pdf', 'Storage Period: 2026-01-31'],
+    ['Non-Ferrous Division', 'Toyota Logistics', 'Copper Scrap', '500kg', 'toyota_logistics2.pdf', 'Category: Recycled Material'],
+    ['Non-Ferrous Division', 'Sanyu Warehouse', 'Copper Pipe B', '1100kg', 'sanyu_warehouse2.pdf', 'Remarks: Surface inspected']
   ];
   
   const worksheet = XLSX.utils.aoa_to_sheet(sampleData);
   const workbook = XLSX.utils.book_new();
-  XLSX.utils.book_append_sheet(workbook, worksheet, '在庫データ');
+  XLSX.utils.book_append_sheet(workbook, worksheet, 'Inventory Data');
   
-  XLSX.writeFile(workbook, 'sample_inventory.xlsx');
+  XLSX.writeFile(workbook, 'sample_inventory_english.xlsx');
+}
+
+export function downloadSamplePDFs(): void {
+  const pdfFiles = [
+    'toyota_logistics.pdf',
+    'sanyu_warehouse.pdf', 
+    'nakagumi.pdf',
+    'toyota_logistics2.pdf',
+    'sanyu_warehouse2.pdf'
+  ];
+  
+  // 各PDFファイルをダウンロード
+  pdfFiles.forEach((filename, index) => {
+    const link = document.createElement('a');
+    link.href = `/${filename}`;
+    link.download = filename;
+    link.style.display = 'none';
+    document.body.appendChild(link);
+    
+    // 少し遅延を入れて順次ダウンロード
+    setTimeout(() => {
+      link.click();
+      document.body.removeChild(link);
+    }, index * 500);
+  });
 }
