@@ -56,7 +56,14 @@ export function InventoryTable({
         </thead>
         <tbody className="bg-white divide-y divide-gray-200">
           {data.map((item) => (
-            <tr key={item.id} className="hover:bg-gray-50">
+            <tr 
+              key={item.id} 
+              className={`hover:bg-gray-50 ${
+                item.差異あり 
+                  ? 'bg-yellow-100 border-l-4 border-yellow-500' 
+                  : ''
+              }`}
+            >
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                 {item.営業部名}
               </td>
@@ -66,8 +73,17 @@ export function InventoryTable({
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                 {item.在庫名称}
               </td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+              <td className={`px-6 py-4 whitespace-nowrap text-sm ${
+                item.差異あり 
+                  ? 'text-red-600 font-bold bg-yellow-50' 
+                  : 'text-gray-900'
+              }`}>
                 {item.数量}
+                {item.差異あり && (
+                  <span className="ml-2 text-xs text-red-500">
+                    (差異あり)
+                  </span>
+                )}
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                 <Button
@@ -90,4 +106,5 @@ export function InventoryTable({
     </div>
   );
 }
+
 

@@ -26,7 +26,8 @@ export const sampleInventoryData: InventoryData[] = [
     在庫名称: 'Brass Rod B',
     数量: '950kg',
     証明書ファイル: 'nakagumi.pdf',
-    補足情報: 'Storage Period: 2026-01-31'
+    補足情報: 'Storage Period: 2026-01-31',
+    差異あり: true // 950KGと1500KGの差異がある行
   },
   {
     id: 4,

@@ -6,6 +6,7 @@ export interface InventoryData {
   数量: string;
   証明書ファイル: string;
   補足情報: string;
+  差異あり?: boolean; // 営業部がチェックした際の差異フラグ
 }
 
 export interface CheckedFields {
@@ -15,4 +16,5 @@ export interface CheckedFields {
 export interface VerificationStatus {
   [rowId: number]: 'pending' | 'accepted' | 'rejected';
 }
+
 

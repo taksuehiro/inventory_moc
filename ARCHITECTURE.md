@@ -293,3 +293,4 @@ Internet → CloudFront → S3 (Static Files)
 
 AWS移行時は、段階的な移行を推奨し、まずは静的ファイルのS3移行から開始することを提案します。
 
+
