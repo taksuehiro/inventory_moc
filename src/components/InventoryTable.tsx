@@ -81,7 +81,7 @@ export function InventoryTable({
                 {item.数量}
                 {item.差異あり && (
                   <span className="ml-2 text-xs text-red-500">
-                    (差異あり)
+                    (営業指摘:差異あり)
                   </span>
                 )}
               </td>
